@@ -1,0 +1,21 @@
+# 2x2
+
+def sec(a11=0,a12=0,b1=0,a21=0,a22=0,b2=0):
+    delta = a11 * a22 - a21 * a12
+    deltax = b1 * a22 - b2 * a12
+    deltay = a11 * b2 - a21 * b1
+    x = int(deltax/delta)
+    y = int(deltay/delta)
+    return x,y
+    
+# 3x3
+
+def thir(a11=0,a12=0,a13=0,b1=0,a21=0,a22=0,a23=0,b2=0,a31=0,a32=0,a33=0,b3=0):
+    delta = a11 * a22 * a33 + a13 * a21 * a32 + a12 * a23 * a31 - a13 * a22 * a31 - a11 * a23 * a32 - a12 * a21 * a33
+    deltax = b1 * a22 * a33 + a13 * b2 * a32 + a12 * a23 * b3 - a13 * a22 * b3 - b1 * a23 * a32 - a12 * b2 * a33
+    deltay = a11 * b2 * a33 + a13 * a21 * b3 + a31 * b1 * a23 - a31 * b2 * a13 - a11 * a23 * b3 - b1 * a21 * a33
+    deltaz = a11 * a22 * b3 + b1 * a21 * a32 + a12 * a31 * b2 - a31 * a22 * b1 - a11 * b2 * a32 - a21 * a12 * b3
+    x = int(deltax/delta)
+    y = int(deltay/delta)
+    z = int(deltaz/delta)
+    return x,y,z
